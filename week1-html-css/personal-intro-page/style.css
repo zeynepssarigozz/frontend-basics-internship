@@ -1,39 +1,48 @@
 body {
     background: #f5f7fa;
     background-image: linear-gradient(120deg, #d0eaff 0%, #f5f7fa 100%);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     color: #333;
 }
-
-.container {
-    width: 95%;
-    margin: 50px auto;
-    background-color: rgb(255, 255, 255);
-    
+.myself {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #52a2ed, #f0f8ff);
+  border: 4px solid white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(78, 145, 221, 0.553);
+  margin: 2rem auto;
+  max-width: 900px;
 }
+
+h1, h2 {
+    font-family: "Trebuchet MS", sans-serif;
+    color: #1e73e2d3;
+}
+
+img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 0 8px rgba(221, 145, 78, 0.553);
+}
+
+
 .about, .hobbies, .contact {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-image: linear-gradient(120deg, #eba35aa0 0%, #f0dfcda0 100%); 
     backdrop-filter: blur(5px);
+    border: 4px solid white;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(221, 145, 78, 0.553);
     padding: 30px;
     margin: 50px auto;
     width: 95%;
 }
-
-h1, h2 {
-    color: #1e73e2d3;
-}
-
-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 12px;
-    display: block;
-    margin: 20px left;
-    box-shadow: 0 0 8px rgba(221, 145, 78, 0.553);
-}
-
 
 .emoji {
     list-style: none;
@@ -45,9 +54,8 @@ img {
     margin-right: 10px;
 }
 
-
 a {
-    color: #1d3557;
+    color: #1e73e2d3;
     text-decoration: none;
 }
 
@@ -57,6 +65,3 @@ a:hover {
     background-color: rgb(255, 255, 255);
 }
 
-section {
-    margin-top: 30px;
-}
