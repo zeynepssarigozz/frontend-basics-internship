@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Sayfa Düzeni</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+    }
+
+    /* Menü çubuğu */
+    .menu {
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .menu .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .menu .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+    }
+
+    .menu .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Kart alanı */
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    .card button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menü çubuğu -->
+  <div class="menu">
+    <div class="logo">🚀 FlexSite</div>
+    <div class="nav-links">
+      <a href="#">Anasayfa</a>
+      <a href="#">Hakkında</a>
+      <a href="#">İletişim</a>
+    </div>
+  </div>
+
+  <!-- Kartlar -->
+  <div class="container">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>Bu bir örnek karttır.</p>
+      <button>Detay</button>
+    </div>
+
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Flexbox ile hizalanmış.</p>
+      <button>Detay</button>
+    </div>
+
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>CSS ile tasarlandı.</p>
+      <button>Detay</button>
+    </div>
+  </div>
+
+</body>
+</html>
