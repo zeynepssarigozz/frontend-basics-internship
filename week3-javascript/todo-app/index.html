@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e9e0fe;
+      color: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #3b3ef3;
+    }
+
+    .box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    input[type="text"] {
+      width: 85%;
+      padding: 10px;
+      border: 2px solid #3b3ef3;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin-left: 8px;
+      border: none;
+      background: #3b3ef3;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.5s;
+    }
+
+    button:hover {
+      opacity: 0.7;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #e7eefe;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .done {
+      color: green;
+      font-weight: bold;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+
+    .btns button {
+      margin-left: 5px;
+      background: #f83939;
+    }
+
+    .btns button:first-child {
+      background: #4caf50;
+    }
+
+    .btns button:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>To-Do List</h1>
+  <div class="box">
+    <input type="text" id="task" placeholder="Add task">
+    <button onclick="add()">Add</button>
+    <ul id="list"></ul>
+  </div>
+
+  <script>
+    const task = document.getElementById("task");
+    const list = document.getElementById("list");
+
+    window.onload = function () {
+      const data = JSON.parse(localStorage.getItem("data")) || [];
+      data.forEach(x => show(x.text, x.done));
+    };
+
+    function add() {
+      const text = task.value.trim();
+      if (text === "") return;
+      show(text, false);
+      save();
+      task.value = "";
+    }
+
+    function show(text, done) {
+      const item = document.createElement("li");
+      item.innerHTML = `
+        <span>${text}</span>
+        <div class="btns">
+          ${done ? '<span class="done">Done</span>' : `
+            <button onclick="mark(this)">✔</button>
+          `}
+          <button onclick="del(this)">🗑</button>
+        </div>
+      `;
+      if (done) item.style.background = "#d0f0d4";
+      list.appendChild(item);
+    }
+
+    function mark(btn) {
+      const item = btn.closest("li");
+      item.style.background = "#d0f0d4";
+      const doneText = document.createElement("span");
+      doneText.className = "done";
+      doneText.textContent = "Done";
+      btn.replaceWith(doneText);
+      save();
+    }
+
+    function del(btn) {
+      const item = btn.closest("li");
+      item.remove();
+      save();
+    }
+
+    function save() {
+      const data = [];
+      list.querySelectorAll("li").forEach(item => {
+        const text = item.querySelector("span").textContent;
+        const done = item.innerHTML.includes("Done");
+        data.push({ text, done });
+      });
+      localStorage.setItem("data", JSON.stringify(data));
+    }
+  </script>
+</body>
+</html>
