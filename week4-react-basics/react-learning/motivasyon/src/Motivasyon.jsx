@@ -1,4 +1,3 @@
-// Motivasyon.js
 import React from 'react';
 
 function Motivasyon(props) {

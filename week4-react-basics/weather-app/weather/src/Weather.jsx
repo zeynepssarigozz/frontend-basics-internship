@@ -1,4 +1,4 @@
-// src/Weather.jsx
+
 import React, { useState } from "react";
 import "./Weather.css";
 
@@ -13,9 +13,9 @@ const fetchWeather = async () => {
   setLoading(true);
   setError("");
   try {
-    const apiKey = "27f521c46e228dc60c95bfeb3226b74f"; // Buraya doğru key’i koy
+    const apiKey = "27f521c46e228dc60c95bfeb3226b74f"; 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric&lang=tr`;
-    console.log("Fetch URL:", url); // URL’yi kontrol et
+    console.log("Fetch URL:", url); 
     const response = await fetch(url);
 
     if (!response.ok) {
