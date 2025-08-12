@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benim Portföyüm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Benim Portföyüm</h1>
+    <button id="theme-toggle">Karanlık Mod</button>
+    <nav>
+      <a href="#home">Ana Sayfa</a>
+      <a href="#about">Hakkımda</a>
+      <a href="#projects">Projeler</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <h2>Merhaba, Ben Zeynep</h2>
+    <p>Web geliştirme alanında kendimi geliştiriyorum. İşte yaptıklarım:</p>
+    <img src="zeynep.jpg" alt="Profil Fotoğrafı" />
+    <br />
+    <button class="greet-btn" onclick="greetUser()">Adınızı öğrenebilir miyim? 😊</button>
+    <div id="greeting" class="greeting-message"></div>
+  </section>
+
+  <section id="about">
+    <h2>Hakkımda</h2>
+    <p>Ben Zeynep Sarıgöz, Bilgisayar mühendisliği son sınıf öğrencisiyim. 21 yaşındayım. Yazılım geliştirmeye özellikle web ve mobil uygulamalar alanında ilgi duyuyorum. Flutter ile mobil uygulamalar geliştiriyor, HTML/CSS ile web arayüzleri tasarlamayı seviyorum. Staj sürecimde HTML, CSS ve JavaScript üzerine çalıştım. Amacım modern ve kullanıcı dostu web siteleri geliştirmek.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projeler</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Basit Kişisel Tanıtım Sayfası</h3>
+        <p>HTML ve CSS kullanarak başlık, fotoğraf, hobiler ve iletişim bilgilerini içeren sade ve şık bir tanıtım sayfası oluşturdum. Hover animasyonları ekledim.</p>
+      </div>
+      <div class="card">
+        <h3>Responsive Blog Sayfası</h3>
+        <p>Bootstrap kullanarak responsive, mobil uyumlu bir blog sayfası oluşturdum. Grid sistemi, navbar ve kart yapıları kullandım.</p>
+      </div>
+      <div class="card">
+        <h3>To-Do List Uygulaması</h3>
+        <p>JavaScript kullanarak görev ekleme, silme ve tamamlanma özellikleri olan bir yapılacaklar listesi uygulaması geliştirdim. Local Storage ile verileri tarayıcıda saklıyor.</p>
+      </div>
+      <div class="card">
+        <h3>React Hava Durumu Uygulaması</h3>
+        <p>React kullanarak API’dan hava durumu verisi çektiğim, şehir seçimine izin veren, yüklenme ve hata durumlarını yönettiğim responsive bir uygulama geliştirdim.</p>
+      </div>
+      <div class="card">
+        <h3>Kişisel Portföy Sitesi</h3>
+        <p>HTML, CSS ve JavaScript kullanarak kişisel portföy sitemi geliştirdim. Responsive tasarım ve temiz arayüz özellikleri bulunuyor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Yetenekler</h2>
+    <div class="skills-list">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React</span>
+      <span>Bootstrap</span>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>İletişim</h2>
+    <p>E-posta: <a href="mailto:zeynepsarigoz16@gmail.com">zeynepsarigoz16@gmail.com</a></p>
+    <p><a href="https://github.com/zeynepssarigozz" target="_blank">GitHub</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Benim Portföyüm. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
